@@ -1,0 +1,46 @@
+mat-card{
+  //background-color: rgb(10, 0, 48);
+  background-color: inherit;
+  height: 100%;
+}
+
+.mat-form-field {
+  margin-left: 10px;
+  font-size: 14px;
+  //background-color: rgb(10, 0, 48);
+  background-color: inherit;
+}
+.summary-section{
+  font-size: 120%;
+  color: white;
+  margin: 10px;
+  width: 10em;
+  max-width: 15em;
+  padding-top: 10px;
+  height: 2.2em;
+  text-align: center;
+  justify-content: center;
+  border-radius: 4px;
+  background-color: rgb(10, 0, 48);
+}
+
+.token-holder{
+  width: 40%;
+  display: flex;
+  justify-content: space-between;
+  margin: 10px;
+  padding: 10px 0;
+}
+
+span {
+  margin-left: 15px;
+}
+
+button{
+  margin-left: 10px;
+}
+
+table {
+  width: 100%;
+  background-color: rgb(10, 0, 48);
+}

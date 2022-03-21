@@ -1,0 +1,57 @@
+<mat-sidenav-container class="example-container">
+  <mat-sidenav mode="side" opened>
+
+    <div class="logo-holder">
+      <img src="assets/cryptk.svg" width="120" height="120">
+      <img src="assets/cryptk-napis.svg" width="120" height="30">
+    </div>
+    <br>
+
+    <mat-divider></mat-divider>
+    <div class="menu-btns-container">
+      <button mat-button color="primary" class="nav-btn" routerLink="/">
+        <div style="width: 10%; float:left; padding-top: 3px">
+          <mat-icon>home</mat-icon>
+        </div>
+        <div style="width: 90%; float:right">
+          HOME PAGE
+        </div>
+
+      </button>
+      <button mat-button color="primary" class="nav-btn" routerLink="/calculator" >
+        <div style="width: 10%; float:left; padding-top: 3px">
+          <mat-icon> attach_money</mat-icon>
+        </div>
+        <div style="width: 90%; float:right">
+          CRYPTO CALC
+        </div>
+      </button>
+
+      <button mat-button color="primary" class="nav-btn" routerLink="twitter-posts" >
+        <div style="width: 10%; float:left; padding-top: 3px">
+          <mat-icon>bookmark</mat-icon>
+        </div>
+        <div style="width: 90%; float:right">
+          TWITTER POSTS
+        </div>
+      </button>
+
+      <button mat-button color="primary" class="nav-btn" routerLink="/news" >
+        <div style="width: 10%; float:left; padding-top: 3px">
+          <mat-icon>language</mat-icon>
+        </div>
+        <div style="width: 90%; float:right">
+          NEWS
+        </div>
+      </button>
+    </div>
+
+  </mat-sidenav>
+
+  <mat-sidenav-content>
+    <router-outlet>
+
+    </router-outlet>
+
+  </mat-sidenav-content>
+</mat-sidenav-container>

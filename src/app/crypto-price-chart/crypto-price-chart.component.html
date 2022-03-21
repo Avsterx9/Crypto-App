@@ -1,0 +1,29 @@
+<p>
+  Time Period:
+  <mat-button-toggle-group [(ngModel)]="chartDurationPeriod" appearance="legacy" name="fontStyle" aria-label="Font Style">
+    <mat-button-toggle (change)="processChartData()" value="1">1d</mat-button-toggle>
+    <mat-button-toggle (change)="processChartData()" value="7">7d</mat-button-toggle>
+    <mat-button-toggle (change)="processChartData()" value="30">30d</mat-button-toggle>
+  </mat-button-toggle-group>
+</p>
+
+<ngx-charts-line-chart
+  [view]="view"
+  [yScaleMin]="yScaleMin"
+  [legend]="legend"
+  [scheme]="'nightLights'"
+  [showGridLines] = "showGridLanes"
+  [showXAxisLabel]="showXAxisLabel"
+  [showYAxisLabel]="showYAxisLabel"
+  [xAxis]="xAxis"
+  [yAxis]="yAxis"
+  [xAxisLabel]="xAxisLabel"
+  [yAxisLabel]="yAxisLabel"
+  [timeline]="timeline"
+  [results]="chartData"
+  (select)="onSelect($event)"
+  (activate)="onActivate($event)"
+  (deactivate)="onDeactivate($event)"
+  style="fill: #FFFFFF;">
+  >
+</ngx-charts-line-chart>

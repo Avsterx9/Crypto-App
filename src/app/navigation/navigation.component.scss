@@ -1,0 +1,40 @@
+.example-container {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgb(27, 15, 74);
+}
+
+.mat-sidenav{
+  width: 14%;
+  text-align: center;
+  background-color: rgb(10, 0, 48);
+}
+
+.nav-btn{
+  width: 100%!important;
+  min-width: unset!important;
+}
+
+a{
+  text-decoration: none;
+  color: inherit;
+}
+.mat-sidenav-content{
+  padding: 5px;
+}
+
+.logo-holder {
+  padding: 10px;
+  margin: 10px;
+}
+
+h2{
+  color: rgb(104, 41, 182);
+}
+
+.menu-btns-container{
+  margin-top: 10px;
+}

@@ -1,0 +1,113 @@
+<mat-card *ngIf="token!=null" class="search-card">
+  <mat-card-title>
+    <img src={{token.image.thumb}} width="30px">
+    {{token.name}}
+  </mat-card-title>
+  <mat-card-actions>
+    <mat-divider></mat-divider>
+    <div class="token-data-container">
+      <div>
+        <h1 style="margin:1.8em; margin-top:1em; color: rgb(155,89,239)">[{{token.name}}] {{token.market_data.current_price.usd}} USD</h1>
+
+        <div class="data">
+          <p class="alignleft">Change 24h: </p>
+          <p class="alignright" *ngIf="token.market_data.price_change_percentage_24h < 0"
+             style="color: red">{{token.market_data.price_change_percentage_24h.toFixed(2)}}%</p>
+          <p class="alignright" *ngIf="token.market_data.price_change_percentage_24h > 0"
+             style="color: green">{{token.market_data.price_change_percentage_24h.toFixed(2)}}%</p>
+          <p class="alignright" *ngIf="token.market_data.price_change_percentage_24h == 0"
+             style="color: white">{{token.market_data.price_change_percentage_24h.toFixed(2)}}%</p>
+        </div>
+
+        <div class="data">
+          <p class="alignleft">Change 7d: </p>
+          <p class="alignright" *ngIf="token.market_data.price_change_percentage_7d < 0"
+             style="color: red">{{token.market_data.price_change_percentage_7d.toFixed(2)}}%</p>
+          <p class="alignright" *ngIf="token.market_data.price_change_percentage_7d > 0"
+             style="color: green">{{token.market_data.price_change_percentage_7d.toFixed(2)}}%</p>
+          <p class="alignright" *ngIf="token.market_data.price_change_percentage_7d == 0"
+             style="color: white">{{token.market_data.price_change_percentage_7d.toFixed(2)}}%</p>
+        </div>
+
+        <div class="data">
+          <p class="alignleft">Change 30d: </p>
+          <p class="alignright" *ngIf="token.market_data.price_change_percentage_30d < 0"
+             style="color: red">{{token.market_data.price_change_percentage_30d.toFixed(2)}}%</p>
+          <p class="alignright" *ngIf="token.market_data.price_change_percentage_30d > 0"
+             style="color: green">{{token.market_data.price_change_percentage_30d.toFixed(2)}}%</p>
+          <p class="alignright" *ngIf="token.market_data.price_change_percentage_30d == 0"
+             style="color: white">{{token.market_data.price_change_percentage_30d.toFixed(2)}}%</p>
+        </div>
+
+        <div class="data">
+          <p class="alignleft">Change 1 year: </p>
+          <p class="alignright" *ngIf="token.market_data.price_change_percentage_1y < 0"
+             style="color: red">{{token.market_data.price_change_percentage_1y.toFixed(2)}}%</p>
+          <p class="alignright" *ngIf="token.market_data.price_change_percentage_1y > 0"
+             style="color: green">{{token.market_data.price_change_percentage_1y.toFixed(2)}}%</p>
+          <p class="alignright" *ngIf="token.market_data.price_change_percentage_1y == 0"
+             style="color: white">{{token.market_data.price_change_percentage_1y.toFixed(2)}}%</p>
+        </div>
+      </div>
+    <br>
+
+    <!--  CHARTS HERE  -->
+    <div style="width:90%;margin:auto">
+      <app-crypto-price-chart [chartTokenName] = tokenName></app-crypto-price-chart>
+    </div>
+
+      <br>
+      <div style="display: flex; width: 100%; margin:auto">
+        <mat-card style="width: 45%; float:left">
+          <hr class="solid">
+          <h2 style="color: rgb(155,89,239)">Market Data</h2>
+
+          <div class="botom-data">
+            <p class="alignleft">Market Cap: </p>
+            <p class="alignright">{{token.market_data.market_cap.usd}} USD</p>
+          </div>
+
+          <div class="botom-data">
+            <p class="alignleft">Market Cap Rank: </p>
+            <p class="alignright">{{token.market_data.market_cap_rank}}</p>
+          </div>
+
+          <div class="botom-data">
+            <p class="alignleft">Total Supply: </p>
+            <p class="alignright">{{token.market_data.total_supply}} USD</p>
+          </div>
+
+          <div class="botom-data">
+            <p class="alignleft">Max Supply: </p>
+            <p class="alignright">{{token.market_data.max_supply}} USD</p>
+          </div>
+
+          <div class="botom-data">
+            <p class="alignleft">Home Page: </p>
+            <p class="alignright"><a style="text-decoration: none;color: rgb(104, 41, 182);"
+                                     href="{{token.links.homepage}}">link</a></p>
+          </div>
+        </mat-card>
+
+        <mat-card style="width: 45%;">
+          <hr class="solid">
+          <h2 style="color: rgb(155,89,239)">Additional Price Data</h2>
+
+          <div class="botom-data">
+            <p class="alignleft">High 24h: </p>
+            <p class="alignright">{{token.market_data.high_24h.usd}} USD</p>
+          </div>
+
+          <div class="botom-data">
+            <p class="alignleft">Low 24h: </p>
+            <p class="alignright">{{token.market_data.low_24h.usd}} USD</p>
+          </div>
+        </mat-card>
+      </div>
+    </div>
+
+
+  </mat-card-actions>
+</mat-card>
+
+<br>
